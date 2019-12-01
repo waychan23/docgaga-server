@@ -1,0 +1,10 @@
+{
+	"entries": [
+		{ "file": "./src/js/signup.js", "name": "signup.js" },
+		{ "file": "./src/js/forget-password.js", "name": "forget-password.js" },
+		{ "file": "./src/js/login.js", "name": "login.js" }
+	],
+	"common": [
+		"jquery"
+	]
+}

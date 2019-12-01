@@ -1,0 +1,245 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 16px; }
+
+.header {
+  width: 100%; }
+
+.main {
+  width: 100%; }
+  .main form {
+    width: 350px;
+    box-shadow: 0 0 10px #666666;
+    border-radius: .5em;
+    padding: 2em;
+    margin: 100px auto; }
+    .main form .form-title {
+      font-size: 1.2em;
+      padding: .8em; }
+    .main form .form-footer {
+      text-align: center;
+      margin: 0; }
+      .main form .form-footer a {
+        text-decoration: none;
+        color: #00AA00; }
+        .main form .form-footer a:hover {
+          color: #005500; }
+    .main form dl {
+      margin: 0;
+      padding: 0;
+      width: 100%; }
+      .main form dl dd {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 1em;}
+        .main form dl dd::after{
+          content: " ";
+          display: block;
+          clear: both;}
+        .main form dl dd[data-role=forget-pwd] {
+          text-align: right; }
+          .main form dl dd[data-role=forget-pwd] a {
+            text-decoration: none;
+            color: #888888; }
+            .main form dl dd[data-role=forget-pwd] a:hover {
+              color: #444444; }
+        .main form dl dd .error-tip {
+          color: #FF0000;
+          font-size: .9em;
+          margin-left: 1em; }
+        .main form dl dd label {
+          display: inline-block;
+          width: 100%;
+          font-size: .9em;
+          margin-bottom: .2em;
+          color: #666666; }
+        .main form dl dd input {
+          box-sizing: border-box;
+          display: inline-block;
+          width: 100%;
+          padding: .8em;
+          font-size: 1em;
+          border-radius: .5em;
+          border: solid thin #AAAAAA;
+          outline: none;
+          background: #FFFFAA; }
+          .main form dl dd input:focus {
+            border: solid thin #00AAFF;
+            box-shadow: 0 0 5px #00AAFF; }
+        .main form dl dd button {
+          display: inline-block;
+          padding: .6em;
+          width: 100%;
+          font-size: 1em;
+          border-radius: .5em;
+          border: solid thin #AAAAAA;
+          outline: none;
+          color: #FFFFFF;
+          cursor: pointer;
+          font-weight: bold;
+          letter-spacing: 5px; }
+          .main form dl dd button[data-role=login-btn] {
+            background: #00AA00;
+            border: solid thin #008800; }
+            .main form dl dd button[data-role=login-btn]:hover {
+              background: #008800; }
+            .main form dl dd button[data-role=login-btn]:active {
+              background: #006600; }
+          .main form dl dd button[data-role=to-signup-btn] {
+            background: #2222FF;
+            border: solid thin #222288; }
+            .main form dl dd button[data-role=to-signup-btn]:hover {
+              background: #2222CC; }
+            .main form dl dd button[data-role=to-signup-btn]:active {
+              background: #2222AA; }
+
+.footer {
+  width: 100%; }
+
+.smaller-text {
+  font-size: 80%; }
+
+.text-client-name{
+  color: #2222FF;
+}
+
+.text-username{
+  color: #0000FF;
+}
+
+.text-important{
+  font-weight: bold;
+}
+
+.text-danger{
+  color: #FF0000;
+}
+
+.plain-anchor{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.plain-anchor:hover{
+  text-decoration: underline;
+}
+
+.privi-list{
+  background: #F8F8F8;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.privi-list li{
+  color: #222222;
+}
+
+.form-input{
+  width: 100%;
+  padding: .8em;
+  border-radius: 5px;
+  margin-top: .3em;
+  margin-bottom: .3em;
+  outline: none;
+  background: white;
+  border: solid thin #999999;
+  box-sizing: border-box;
+}
+
+.btn-primary{
+  color: white;
+  background: #2222FF;
+}
+
+.btn-primary:hover{
+  border: solid thin #222288;
+  background: #2222CC;
+}
+
+.btn-primary:active{
+  background: #2222AA;
+}
+
+.btn-success{
+  color: white;
+  background: #00AA00;
+  font-weight: bold;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+.btn-success:hover{
+  background: #009900;
+}
+.btn-success:active{
+  background: #008800;
+}
+
+.btn-danger{
+  color: white;
+  background: #FF0000;
+  font-weight: bold;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+.btn-danger:hover{
+  background: #EE0000;
+}
+.btn-danger:active{
+  background: #DD0000;
+}
+
+input[disabled], input.disabled{
+  background: #DDDDDD !important;
+}
+
+button[disabled], button.disabled{
+  background: #DDDDDD !important;
+  color: #222222 !important;
+}
+
+button[disabled]:hover, button.disabled:hover{
+  border: solid thin #AAAAAA !important;
+}
+
+.tip-btn{
+  font-size: .9em;
+  text-decoration: none;
+  color: #2222FF;
+  cursor: pointer;
+}
+
+.tip-text{
+  font-size: .9em;
+  text-decoration: none;
+  color: #AAAAAA;
+}
+
+.tip-btn:hover{
+  color: #222288;
+}
+
+.tip-btn:active{
+  color: #2222AA;
+}
+
+.float-right{
+  float: right;
+}
+
+.text-danger{
+  color: #FF0000;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-left{
+  text-align: left;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>注册 - 汤圆笔记</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/signup.css">
+	</head>
+	<body>
+		<div class="header">
+
+		</div>
+		<div class="main">
+			<div class="post">
+				<h3>
+					<span style="color: #FFAA00;">汤</span>
+					<span style="color: #00EEAA;">圆</span>
+					<span style="color: #DDAA22;">笔</span>
+					<span style="color: #0055EE;">记</span>
+				</h3>
+				<button>下载浏览器插件</button>
+			</div>
+			<form method="post" enctype="application/x-www-form-urlencoded">
+				<dl>
+					<dd>
+						<label for="username" title="用于显示和登录使用的名称">用户名<span class="error-tip"></span></label>
+						<input required="required" name="username" type="text" placeholder="4~16个字符" title="输入用户名"/>
+						<img name="username" data-role="loading"/>
+					</dd>
+					<dd>
+						<label for="password" title="用于登录的密码">密码<span class="error-tip"></span></label>
+						<input required="required" name="password" type="password" placeholder="8~20个字符" title="输入密码"/>
+						<a data-role="toggle-vis-btn">显</a>
+					</dd>
+					<dd>
+						<label for="phone" title="用于登录以及安全验证">手机号码<span class="error-tip"></span></label>
+						<input required="required" name="phone" type="text" placeholder="输入你的手机号码" title="输入手机号码"/>
+						<img name="phone" data-role="loading"/>
+						<button disabled="disabled" data-role="send-verify-code-btn">获取验证码</button>
+					</dd>
+					<dd data-role="verify-code-row">
+						<label for="phone" title="手机验证码">请输入你收到的验证码<span class="error-tip"></span></label>
+						<input required="required" name="verifyCode" type="text" placeholder="输入你收到的手机验证码" title="输入手机验证码">
+					</dd>
+					<dd>
+						<button data-role="sign-up" disabled="disabled" title="注册前请先阅读《服务条款及隐私政策》">注册</button>
+					</dd>
+					<dd>
+						<button data-role="to-login">已注册，去登录</button>
+					</dd>
+					<dd>
+						<label><input required="required" name="terms" type="checkbox"><span>勾选这里代表您已阅读并同意<a href="#">《服务条款及隐私政策》</a></span></label>
+					</dd>
+				</dl>
+			</form>
+		</div>
+		<div class="footer">
+			<span>Created with <font style="color: red;">❤</font> by 陈威(<a href="mailto:waychan23@hotmail.com">waychan23@hotmail.com</a>)</span><br/>
+			<a data-role="info" href="http://github.com/waychan23" target="_blank">GitHub</a>|
+			<a data-role="info" href="http://cnblogs.com/waychan" target="_blank">博客</a>|
+			<span style="font-size: 80%;">Copyright&copy;2017,陈威 All Rights Reserved</span>
+		</div>
+		<script src="lib/common.js"></script>
+		<script src="js/signup.js"></script>
+	</body>
+</html>

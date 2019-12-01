@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>应用授权 - 汤圆笔记</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>
+            亲爱的 <%- username %>, 应用程序 <%- clientName %> 需要获取以下权限:
+            <ul>
+            <% privis.forEach(function(priv){ %>
+                <li><%- priv.name %></li>
+            <% }) %>
+            </ul>
+            <div>
+                是否同意授予 <%- clientName %> 上述权限?
+            </div>
+            <div>
+                <button id="agree-btn">同意</button>
+            </div>
+            <div>
+                <button id="deny-btn">拒绝</button>
+            </div>
+            <input type="hidden" id="authorize-url" value="<%= authorizeUrl %>"/>
+        </div>
+        <script type="text/javascript">
+            var form = document.forms[0],
+                agreeBtn = document.getElementById('agree-btn'),
+                denyBtn = document.getElementById('deny-btn');
+                el = document.getElementById('authorize-url'),
+                url = el && el.value;
+
+            if(url){
+                agreeBtn.onclick = function(){
+                    window.location.href = url+'&agree=true';
+                };
+            }
+
+            denyBtn.onclick = function(){
+                console.log('deny');
+            };
+                
+        </script>
+    </body>
+</html>

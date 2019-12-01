@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="<%= assetsPath %>/css/login.css"/>
+		<title>应用授权 - 汤圆笔记</title>
+	</head>
+	<body>
+		<div class="header"></div>
+		<div class="main">
+			<form>
+				<div class="form-title">
+					应用授权 -
+					<span style="color: #FFAA00;">汤</span>
+					<span style="color: #00EEAA;">圆</span>
+					<span style="color: #DDAA22;">笔</span>
+					<span style="color: #0055EE;">记</span>
+				</div>
+				<div>
+					亲爱的 <span class="text-username"><%- username %></span>, 应用程序 <span class="text-client-name"><%- clientName %></span> 需要获取以下权限:
+					<ul class="privi-list">
+					<% privis.forEach(function(priv){ %>
+						<li><%- priv.name %></li>
+					<% }) %>
+					</ul>
+					<div class="text-important">
+						您是否同意授予 <span class="text-client-name"><%- clientName %></span> 上述权限?
+					</div>
+					<br/>
+					<div>
+						<button id="agree-btn" class="form-input btn-success">同意</button>
+					</div>
+					<div>
+						<button id="deny-btn" class="form-input btn-danger">拒绝</button>
+					</div>
+					<div style="text-align: right;">
+						<a href="#" class="smaller-text plain-anchor" style="color: #0055EE;" id="logout-btn">切换帐号</a>
+						&nbsp;|&nbsp;
+						<a href="#" class="smaller-text plain-anchor" style="color: #0055EE;" id="logout-deny-btn">拒绝并退出登录</a>
+					</div>
+					<div style="text-align: left">
+						<span id="tip" class="smaller-text" style="color: #666666;">提示：为了您的信息安全，请尽快完成操作</span>
+					</div>
+				</div>
+				<input type="hidden" id="authorize-url" value="<%= authorizeUrl %>"/>
+			</form>
+		</div>
+		<div class="footer"></div>
+		<script>
+		 var form = document.forms[0],
+		 		tip = document.getElementById('tip'),
+                agreeBtn = document.getElementById('agree-btn'),
+                denyBtn = document.getElementById('deny-btn');
+				logoutBtn = document.getElementById('logout-deny-btn');
+				switchAccountBtn = document.getElementById('logout-btn');
+                el = document.getElementById('authorize-url'),
+                url = el && el.value;
+
+			form.onsubmit = function(){
+				return false;
+			};
+
+            if(url){
+                agreeBtn.onclick = function(){
+                    window.location.href = url+'&agree=true';
+                };
+
+				denyBtn.onclick = function(){
+					window.location.href = url+'&deny=true';
+				}
+
+				logoutBtn.onclick = function(){
+					window.location.href = url+'&deny=true&logout=true';
+				};
+
+				switchAccountBtn.onclick = function(){
+					window.location.href = url+'&logout=true'
+				};
+            }
+		</script>
+	</body>
+</html>
