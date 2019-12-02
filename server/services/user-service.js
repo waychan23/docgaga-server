@@ -64,7 +64,6 @@ UserService.prototype.checkIfUserExists = async (query) => {
  * @return {Promise} true | false
  */
 UserService.prototype.signUp = async (user, options) => {
-	//TODO
 	var hash = await secCrpt.encodePassword(user),
 		usr = DocGagaUser({
 			username: user.username,

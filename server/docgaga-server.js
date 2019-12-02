@@ -12,6 +12,8 @@ const mqw = require('./security/utils/mal-request-validation-wrapper');
 const requestFrequencyController = require('./security/middleware/request-frequency-controller');
 const authController = require('./security/middleware/auth-controller');
 const validator = require('./validation/middleware/validator');
+const LogAsepct = require('./logging/log-aspect');
+const logger = require('./logging/logger');
 
 const appConfig = require('./config/app-conf');
 
@@ -96,6 +98,8 @@ module.exports.listen = function(port){
 	//挂载静态内容服务
 	app.use(mount(`${appConfig.assetsPath}`, staticServer(`${__dirname}/../assets/build`)));
 
+	app.use(new LogAsepct());
+
 	//挂载会话管理中间件
 	app.use(session(app));
 	app.use(async (ctx, next) => { ctx.request.session = ctx.session; await next(); });
@@ -118,6 +122,6 @@ module.exports.listen = function(port){
 	}));
 
 	app.listen(port, function(){
-		console.log(`汤圆笔记认证与资源服务器启动成功，端口：${port}`);
+		logger.info(`汤圆笔记认证与资源服务器启动成功，端口：${port}`);
 	});
 }

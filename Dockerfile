@@ -9,9 +9,10 @@ COPY assets /workspace/assets
 
 RUN cd /workspace/server && cnpm install
 RUN cd /workspace/assets && cnpm install && npm run build
-
-COPY ./entrypoint.sh /workspace/entrypoint.sh
+RUN rm -rf /workspace/assets/node_modules /workspace/assets/src
 
 VOLUME ['/workspace/server/config/runtime-conf.js']
 
-CMD ["sh", "-c", "/workspace/entrypoint.sh"]
+EXPOSE 3333
+
+CMD ["node", "/workspace/server/start-up.js"]

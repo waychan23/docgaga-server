@@ -7,12 +7,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@localhost:~/repos/docgaga/docgaga-server.git"
+    "url": "https://github.com/waychan23/docgaga-server.git"
   },
-  "author": "WayChan",
+  "author": "Chen Wei",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^1.0.2",
+    "bcrypt": "^2.0.0",
     "commander": "^2.9.0",
     "consolidate": "^0.14.5",
     "csprng": "^0.1.2",
@@ -30,10 +30,9 @@
     "regex-utils": "github:waychan23/regex-utils#1.0.0",
     "request": "^2.81.0",
     "simple-memory-storage": "github:waychan23/simple-memory-storage",
-    "string-utils": "github:waychan23/string-utils#1.0.0"
+    "string-utils": "github:waychan23/string-utils#1.0.0",
+    "signale": "^1.4.0",
+    "uuid": "^3.3.3"
   },
-  "devDependencies": {
-    "chai": "^4.0.2",
-    "mocha": "^3.4.2"
-  }
+  "devDependencies": {}
 }
