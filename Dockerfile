@@ -1,15 +1,16 @@
-FROM node:8.16.2-alpine
+FROM node:8.16.2
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && apk add --no-cache git
+COPY sources.list /etc/apt/sources.list
 
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 RUN npm config set registry https://registry.npm.taobao.org && npm install -g cnpm
 
 COPY server /workspace/server
 COPY assets /workspace/assets
 
+RUN cd /workspace/assets && cnpm install && npm run build && \
+    rm -rf /workspace/assets/node_modules && rm -rf /workspace/assets/src
 RUN cd /workspace/server && cnpm install
-RUN cd /workspace/assets && cnpm install && npm run build
-RUN rm -rf /workspace/assets/node_modules /workspace/assets/src
 
 VOLUME ['/workspace/server/config/runtime-conf.js']
 
