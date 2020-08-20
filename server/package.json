@@ -12,7 +12,7 @@
   "author": "Chen Wei",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^1.0.3",
+    "bcrypt": "^5.0.0",
     "commander": "^2.9.0",
     "consolidate": "^0.14.5",
     "csprng": "^0.1.2",
